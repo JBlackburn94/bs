@@ -21,3 +21,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.ticket-card {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
