@@ -6,7 +6,7 @@ import Countdown from "./components/Countdown";
 export default function Home() {
   return (
     <div>
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col items-center overflow-hidden">
         <Image
           src={bg}
           alt="Background image"
