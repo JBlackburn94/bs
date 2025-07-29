@@ -1,33 +1,50 @@
 "use client";
+import iconLogo from "@/public/icon-white.png";
+import Image from "next/image";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { links } from "@/app/constants/constants";
+import Link from "next/link";
 
 export default function Navbar() {
-  return (
-    <nav className="sticky top-0 z-50 flex justify-end w-full items-center">
-      {/* Desktop */}
-      <div className="flex justify-center items-center w-fit w-96 bg-white/10 border border-white/20 shadow-md backdrop-blur-md text-orange z-50 max-md:hidden mt-5 mx-5 px-5 py-3 rounded-full">
-        <ul className="flex gap-5 *:hover:underline font-medium uppercase">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#tickets">Tickets</a>
-          </li>
-          <li>
-            <a href="#merch">Watch</a>
-          </li>
-          <li>
-            <a href="#merch">Merch</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      {/* Mobile */}
-      <div className="justify-center items-center cursor-pointer hidden max-md:flex m-5 bg-orange/30 border border-orange/40 text-white shadow-md backdrop-blur-md p-5 rounded-full h-12 w-12">
-        =
+  const handleMenuOpen = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <nav className="sticky top-0 pt-4 z-50">
+      <div className="max-w-site-wrapper mx-auto bg-orange/60 backdrop-blur-lg text-white font-bold flex justify-between items-center px-4 py-3 rounded-xl shadow-lg">
+        <div>
+          <Image
+            src={iconLogo}
+            alt="Beauty School logo icon"
+            className="max-w-12"
+          />
+        </div>
+        <ul className="flex gap-4 max-lg:hidden">
+          {links.map((link) => (
+            <li key={link.name}>
+              <Link href={link.href} target={link.target}>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="hidden max-lg:flex">
+          {isMenuOpen ? (
+            <X size={32} onClick={handleMenuOpen} />
+          ) : (
+            <Menu size={32} onClick={handleMenuOpen} />
+          )}
+        </div>
       </div>
+      {isMenuOpen && (
+        <div className="bg-orange absolute right-0">
+          <div className="max-w-site-wrapper">menu</div>
+        </div>
+      )}
     </nav>
   );
 }

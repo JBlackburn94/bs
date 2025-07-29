@@ -19,7 +19,7 @@ export default function TicketCard(props: TicketCardProps) {
         />
       </div>
       <ul className="row-span-3 text-black p-5 text-lg">
-        <li className="font-semibold text-xl">{props.venue}</li>
+        <li className="font-semibold text-xl text-orange">{props.venue}</li>
         <li>{props.date}</li>
         <li className="flex gap-2 items-center">
           <span>{props.city}, </span>
@@ -28,7 +28,7 @@ export default function TicketCard(props: TicketCardProps) {
       </ul>
       <a
         href={props.link}
-        className="justify-self-center bg-black font-bold text-xl hover:bg-black/80 hover:-translate-y-2 transition ease-in-out duration-200 text-white py-2 px-3 mb-5 rounded-lg cursor-pointer"
+        className="justify-self-center bg-black font-bold text-xl hover:-translate-y-2 transition ease-in-out duration-200 text-white py-2 px-3 mb-5 rounded-lg cursor-pointer"
         target="_blank"
       >
         Tickets
