@@ -2,6 +2,7 @@ import Image from "next/image";
 import logo from "@/public/linear-logo-orange.png";
 import fnoArtwork from "@/public/album-artwork.jpg";
 import sdrLogo from "@/public/logo-sdr.png";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -17,7 +18,7 @@ export default function Hero() {
             className="w-full h-full shadow-lg rounded-xl"
           ></iframe>
         </div>
-        <div className="flex flex-row-reverse justify-between gap-4 max-lg:gap-1 max-lg:flex-col-reverse max-lg:justify-center bg-white/60 backdrop-blur-lg p-4 rounded-xl">
+        <div className="flex flex-row-reverse justify-between gap-4 max-lg:gap-1 max-lg:flex-col-reverse max-lg:justify-center">
           <div className="w-1/2 max-lg:w-full">
             <Image
               src={fnoArtwork}
@@ -27,15 +28,26 @@ export default function Hero() {
           </div>
           <div className="flex flex-col justify-center items-center w-1/2 max-lg:w-full text-center gap-2">
             <Image src={logo} alt="Beauty School logo" className="max-w-logo" />
-            <h2 className="text-orange font-bold text-4xl">New Album!</h2>
-            <p className="font-medium">
+            <h2 className="text-orange font-bold text-4xl max-lg:text-2xl">
+              New Album!
+            </h2>
+            <p className="font-medium text-xl">
               From Now On has been a long time coming and is easily the most
               honest collection of songs we have made so far as a group.
               It&apos;s heavier, darker and decidedly more Beauty School than
               ever before. We&apos;ve lived lot since Happiness and we are so
-              excited for you to hear this record in full on “x October 2025.
+              excited for you to hear this record in full on “3rd October 2025.
               From us to you, &quot;From Now On&quot;.
             </p>
+            <Link
+              href={
+                "https://slamdunk.world/collections/beauty-school-from-now-on"
+              }
+              target="_blank"
+              className="bg-orange py-3 px-5 rounded-xl text-white uppercase mt-2"
+            >
+              Pre Order
+            </Link>
             <Image
               src={sdrLogo}
               alt="Slam Dunk Records logo"

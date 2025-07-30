@@ -41,8 +41,25 @@ export default function Navbar() {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="bg-orange absolute right-0">
-          <div className="max-w-site-wrapper">menu</div>
+        <div className="bg-orange absolute top-0 left-0 h-screen w-screen p-5 overflow-hidden">
+          <div>
+            <div className="flex justify-end items-center text-white">
+              <X onClick={handleMenuOpen} size={32} />
+            </div>
+            <ul className="flex gap-10 flex-col text-2xl text-white font-bold p-5 mt-5">
+              {links.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    target={link.target}
+                    onClick={handleMenuOpen}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </nav>

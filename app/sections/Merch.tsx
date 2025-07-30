@@ -1,6 +1,6 @@
 export default function Merch() {
   return (
-    <section className="w-full outline outline-blue-500 bg-orange">
+    <section className="max-w-inner-site mx-auto outline outline-blue-500">
       <div className="h-screen"></div>
     </section>
   );

@@ -1,9 +1,10 @@
 import React from "react";
+import WatchCarousel from "../components/WatchCarousel";
 
 export default function Watch() {
   return (
-    <section className="w-full outline outline-blue-500">
-      <div className="h-screen"></div>
+    <section className="max-w-site-inner mx-auto scroll-mt-24" id="watch">
+      <WatchCarousel />
     </section>
   );
 }
